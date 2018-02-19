@@ -1,4 +1,4 @@
-import {ActionTypes as ReduxActionTypes} from 'redux/lib/createStore';
+const INIT_ACTION = '@@redux/INIT';
 
 class Reducer {
 
@@ -20,7 +20,7 @@ class Reducer {
 
     toFunction = () => (state = this.initialState, action) => {
         if (action.type) {
-            if (action.type === ReduxActionTypes.INIT && state) {
+            if (action.type === INIT_ACTION && state) {
                 return {...state, ...this.initialState};
             }
             const mapper = this.map[action.type];
