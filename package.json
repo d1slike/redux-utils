@@ -1,11 +1,10 @@
 {
-  "name": "redux-utils",
-  "version": "1.0.0",
+  "name": "redux-reducer-utils",
+  "version": "1.0.1",
   "description": "Small lib for redux",
   "main": "lib/redux-utils.js",
   "scripts": {
-    "build": "webpack --env dev && webpack --env build && npm run test",
-    "dev": "webpack --progress --colors --watch --env dev",
+    "build": "babel --presets es2015,stage-0 src/ -o lib/redux-utils.js && npm run test",
     "test": "mocha --require babel-core/register --colors ./test/*.spec.js",
     "test:watch": "mocha --require babel-core/register --colors -w ./test/*.spec.js"
   },
