@@ -16,11 +16,11 @@ describe('Test init', () => {
         reducer = createReducer({
             a: 1
         }).toFunction();
-        store = createStore({test: reducer}, {});
+        store = createStore(reducer, {});
     });
     describe('Test init', () => {
         it('should return a = 1', () => {
-            expect(store.getState().test.a).to.be.equal(1);
+            expect(store.getState().a).to.be.equal(1);
         });
     });
 });
