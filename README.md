@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/redux-reducer-utils.svg)](https://badge.fury.io/js/redux-reducer-utils)
 [![Build Status](https://travis-ci.org/d1slike/redux-utils.svg?branch=master)](https://travis-ci.org/d1slike/redux-utils)
-[![Coverage Status](https://coveralls.io/repos/d1slike/redux-utils/badge.svg?branch=master)](https://coveralls.io/r/<account>/<repository>?branch=master)
+[![Coverage Status](https://coveralls.io/repos/d1slike/redux-utils/badge.svg?branch=master)](https://coveralls.io/r/d1slike/redux-utils?branch=master)
 
 Lightweight, no dependency library for redux reducers
 
@@ -92,7 +92,7 @@ const withCreateReducer = createReducer(initialState)
     }))
     .when(ACTION_TYPE_4, (state, action) => ({
         ...state,
-        c: state.c + +action.payload,
+        c: state.c + action.payload,
     }))
     .toFunction();
 ```
