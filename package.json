@@ -1,6 +1,6 @@
 {
   "name": "redux-reducer-utils",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Small lib for redux",
   "main": "lib/index.js",
   "scripts": {
