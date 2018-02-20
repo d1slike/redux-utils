@@ -7,7 +7,7 @@
     "build": "babel --presets es2015,stage-0 src --out-dir lib && npm run test",
     "prepublish": "npm run build",
     "test:watch": "mocha --require babel-core/register --colors -w ./test/*.spec.js",
-    "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/.bin/_mocha",
+    "test": "babel --presets es2015,stage-0 src/_test_ --out-dir test && ./node_modules/istanbul/lib/cli.js cover ./node_modules/.bin/_mocha",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "repository": {
@@ -19,7 +19,8 @@
     "utils",
     "reducer",
     "creator",
-    "react"
+    "react",
+    "react-native"
   ],
   "author": "Yan Komissarov",
   "license": "MIT",
