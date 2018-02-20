@@ -1,7 +1,7 @@
 /* global describe, it, before */
 
 import chai from 'chai';
-import {createReducer} from '../../lib/index';
+import {createReducer} from '../lib/index';
 import {createStore} from 'redux';
 
 chai.expect();
