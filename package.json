@@ -6,8 +6,8 @@
   "scripts": {
     "build": "babel --presets es2015,stage-0 src --out-dir lib && npm run test",
     "prepublish": "npm run build",
-    "test": "nyc --require babel-core/register mocha",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+    "test": "nyc --reporter lcov --require babel-core/register mocha",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
