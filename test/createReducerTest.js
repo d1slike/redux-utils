@@ -16,7 +16,7 @@ describe('Test init', () => {
         reducer = createReducer({
             a: 1
         }).toFunction();
-        store = createStore(reducer, {});
+        store = createStore(reducer);
     });
     describe('Test init', () => {
         it('should return a = 1', () => {
@@ -43,7 +43,7 @@ describe('Test state mutation', () => {
                 b: state.b + action.payload,
             }))
             .toFunction();
-        store = createStore(reducer, {});
+        store = createStore(reducer);
     });
     describe('Test init', () => {
         it('should return a = 1', () => {
