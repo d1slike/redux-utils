@@ -1,4 +1,5 @@
 import invariant from 'invariant';
+import {INIT_ACTION} from "./ReducerBuilder";
 
 const composeReducers = (...reducers) => {
 
@@ -9,8 +10,13 @@ const composeReducers = (...reducers) => {
         return (state, action) => reducers[0](state, action);
     } else if (reducers.length === 2) {
         return (state, action) => {
-            const first = reducers[0](state, action);
-            return reducers[1](first, action);
+            if (action.type === INIT_ACTION) {
+                const first = reducers[0](undefined, action);
+                return {...first, ...reducers[1](undefined, action)}
+            } else {
+                const first = reducers[0](state, action);
+                return reducers[1](first, action);
+            }
         };
     } else {
         return (state, action) =>

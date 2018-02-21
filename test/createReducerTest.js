@@ -1,7 +1,7 @@
 /* global describe, it, before */
 
 import chai from 'chai';
-import {createReducer} from '../lib/index';
+import {createReducer} from '../src';
 import {createStore} from 'redux';
 
 chai.expect();
@@ -57,6 +57,11 @@ describe('Test state mutation', () => {
             store.dispatch({type: 'ACTION4', payload: 1});
             expect(store.getState()).to.deep.equal({a: 9, b: 4});
         });
+        it('should do nothing', () => {
+            const oldState = store.getState();
+            store.dispatch({payload: 999, type: 'aaaa'});
+            expect(store.getState()).to.be.equal(oldState);
+        })
     });
 });
 

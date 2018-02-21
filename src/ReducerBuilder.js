@@ -1,4 +1,4 @@
-const INIT_ACTION = '@@redux/INIT';
+export const INIT_ACTION = '@@redux/INIT';
 
 class Reducer {
 
@@ -19,18 +19,15 @@ class Reducer {
     };
 
     toFunction = () => (state = this.initialState, action) => {
-        if (action.type) {
-            if (action.type === INIT_ACTION && state) {
-                return {...state, ...this.initialState};
-            }
-            const mapper = this.map[action.type];
-            if (mapper) {
-                return mapper(state, action);
-            } else {
-                return state;
-            }
+        if (action.type === INIT_ACTION && state) {
+            return {...state, ...this.initialState};
         }
-        return state;
+        const mapper = this.map[action.type];
+        if (mapper) {
+            return mapper(state, action);
+        } else {
+            return state;
+        }
     };
 }
 
