@@ -1,8 +1,8 @@
 /* global describe, it, before */
 
 import chai from 'chai';
-import {createReducer} from '../src';
 import {createStore} from 'redux';
+import {createReducer} from '../src';
 
 chai.expect();
 
@@ -21,6 +21,18 @@ describe('Test init', () => {
     describe('Test init', () => {
         it('should return a = 1', () => {
             expect(store.getState().a).to.be.equal(1);
+        });
+    });
+});
+
+describe('Test init', () => {
+    before(() => {
+        reducer = createReducer().toFunction();
+        store = createStore(reducer);
+    });
+    describe('Test reducer with default initial state', () => {
+        it('should be empty object', () => {
+            expect(store.getState()).to.deep.equal({});
         });
     });
 });
