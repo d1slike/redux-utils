@@ -6,9 +6,9 @@
 
 Lightweight, no dependency library for redux reducers
 
-* [Install](#Install)
-* [Reducer creator](#Reducer-creation)
-* [Reducer composer](#Reducer-composition)
+* [Install](#install)
+* [Reducer creator](#reducer-creation)
+* [Reducer composer](#reducer-composition)
 
 ## Install
 ```
