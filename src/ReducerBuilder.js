@@ -1,5 +1,4 @@
 class Reducer {
-
     initialState = {};
     map = {};
 
@@ -9,7 +8,7 @@ class Reducer {
 
     when = (actionType, mapper) => {
         if (Array.isArray(actionType)) {
-            actionType.forEach(type => this.map[type] = mapper);
+            actionType.forEach(type => (this.map[type] = mapper));
         } else {
             this.map[actionType] = mapper;
         }
@@ -20,9 +19,8 @@ class Reducer {
         const mapper = this.map[action.type];
         if (mapper) {
             return mapper(state, action);
-        } else {
-            return state;
         }
+        return state;
     };
 }
 

@@ -1,3 +1,12 @@
 {
-  "extends": "airbnb"
+    "extends": "airbnb-base",
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 7,
+        "sourceType": "module"
+    },
+    "rules": {
+        "indent": [2, 4, {"SwitchCase": 1, "ignoredNodes": ["ConditionalExpression"]}],
+        "object-curly-spacing": ["error", "never"]
+    }
 }
