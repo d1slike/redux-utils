@@ -14,7 +14,7 @@ let reducer;
 describe('Test init', () => {
     before(() => {
         reducer = createReducer({
-            a: 1
+            a: 1,
         }).toFunction();
         store = createStore(reducer);
     });
@@ -41,14 +41,12 @@ describe('Test state mutation', () => {
     before(() => {
         reducer = createReducer({
             a: 1,
-            b: 2
+            b: 2,
         })
-            .when('ACTION', (state, action) => {
-                return {
-                    ...state,
-                    a: state.a + action.payload,
-                }
-            })
+            .when('ACTION', (state, action) => ({
+                ...state,
+                a: state.a + action.payload,
+            }))
             .when(['ACTION3', 'ACTION4'], (state, action) => ({
                 ...state,
                 a: state.a - 1,
@@ -73,7 +71,6 @@ describe('Test state mutation', () => {
             const oldState = store.getState();
             store.dispatch({payload: 999, type: 'aaaa'});
             expect(store.getState()).to.be.equal(oldState);
-        })
+        });
     });
 });
-

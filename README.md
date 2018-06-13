@@ -6,7 +6,11 @@
 
 Lightweight, no dependency library for redux reducers
 
-### Install
+* [Install](#Install)
+* [Reducer creator](#Reducer-creation)
+* [Reducer composer](#Reducer-composition)
+
+## Install
 ```
 npm install --save redux-reducer-utils
 ```
@@ -14,9 +18,9 @@ Or
 ```
 yarn add redux-reducer-utils
 ```
-### Use
+## Usage
 
-#### Reducer creation
+### Reducer creation
 ``createReducer`` provides more declarative way to describe redux reducer
 
 Just call ``createReducer`` with initial state as argument and then
@@ -97,7 +101,7 @@ const withCreateReducer = createReducer(initialState)
     .toFunction();
 ```
 
-#### Reducer composition
+### Reducer composition
 
 ``composeReducers`` This function can help with reducers horizontal scaling
 
